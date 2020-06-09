@@ -39,9 +39,7 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxkotlin:2.4.0'
 
     implementation 'com.spotify.mobius:mobius-core:1.5.0'
-    implementation 'com.spotify.mobius:mobius-rx2:1.5.0'
     implementation 'com.spotify.mobius:mobius-android:1.5.0'
-    implementation 'com.spotify.mobius:mobius-extras:1.5.0'
     testImplementation 'com.spotify.mobius:mobius-test:1.5.0'
 
     testImplementation 'junit:junit:4.13'

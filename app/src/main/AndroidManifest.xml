@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme"
         android:allowBackup="false">
 
-        <activity android:name=".mobius.MobiusActivity">
+        <activity android:name=".mobius_simple.MobiusActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
