@@ -6,7 +6,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import com.mvi.R
-import com.mvi.base.MviView
+import com.mvi.mobius_simple.base.MviView
 import com.mvi.rxredux.feature.AppsListFeature
 import io.reactivex.disposables.Disposable
 

@@ -1,4 +1,4 @@
-package com.mvi.base
+package com.mvi.mobius_simple.base
 
 interface MviView {
 

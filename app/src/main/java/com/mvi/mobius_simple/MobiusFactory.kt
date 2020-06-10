@@ -1,8 +1,8 @@
 package com.mvi.mobius_simple
 
-import com.mvi.base.MviEffect
-import com.mvi.base.MviEvent
-import com.mvi.base.MviModel
+import com.mvi.mobius_simple.base.MviEffect
+import com.mvi.mobius_simple.base.MviEvent
+import com.mvi.mobius_simple.base.MviModel
 import com.spotify.mobius.Connectable
 import com.spotify.mobius.Mobius
 import com.spotify.mobius.MobiusLoop

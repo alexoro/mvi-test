@@ -1,6 +1,6 @@
 package com.mvi.mobius_simple.feature
 
-import com.mvi.base.MviFeature
+import com.mvi.mobius_simple.base.MviFeature
 import com.mvi.imengine.ImEngine
 import com.mvi.imengine.OnCacheInvalidateEvent
 import com.mvi.mobius_simple.MobiusFactory
