@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import com.mvi.R
 import com.mvi.mobius_simple.base.MviView
+import com.mvi.rxredux.feature.AppsListActions
 import com.mvi.rxredux.feature.AppsListFeature
 import io.reactivex.disposables.Disposable
 
@@ -29,10 +30,10 @@ class AppsListView(
 
     init {
         loadInitView.setOnClickListener {
-            feature.submit(AppsListFeature.AppsListActions.InitLoad.Start)
+            feature.submit(AppsListActions.InitLoad.Start)
         }
         sendLogsView.setOnClickListener {
-            feature.submit(AppsListFeature.AppsListActions.SendLogs.Start("Hello world!"))
+            feature.submit(AppsListActions.SendLogs.Start("Hello world!"))
         }
         observeDisposable = feature.observeModel().subscribe {
             resultView.text = "Loading = ${it.isLoading}, List = ${it.list}"
@@ -55,7 +56,7 @@ class AppsListView(
                 .setMessage("Still in progress!")
                 .setCancelable(false)
                 .setNeutralButton("Cancel") { _, _ ->
-                    feature.submit(AppsListFeature.AppsListActions.SendLogs.Cancel)
+                    feature.submit(AppsListActions.SendLogs.Cancel)
                 }
                 .setOnDismissListener {
                     sendLogsDialog = null
