@@ -1,2 +1,7 @@
 rootProject.name='MviSample'
 include ':app'
+
+include ':libmvi-api'
+project(':libmvi-api').projectDir = new File(rootDir, 'libmvi/libmvi-api')
+include ':libmvi-mobius'
+project(':libmvi-mobius').projectDir = new File(rootDir, 'libmvi/libmvi-mobius')
