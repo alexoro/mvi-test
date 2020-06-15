@@ -1,7 +1,11 @@
 rootProject.name='MviSample'
-include ':app'
+include ':app',
+        ':sample-mobius',
+        ':sample-rxredux',
+//        ':sample-mvikotlin'
+        ':sample-mvicore'
 
-include ':libmvi-api'
-project(':libmvi-api').projectDir = new File(rootDir, 'libmvi/libmvi-api')
-include ':libmvi-mobius'
-project(':libmvi-mobius').projectDir = new File(rootDir, 'libmvi/libmvi-mobius')
+//include ':libmvi-api'
+//project(':libmvi-api').projectDir = new File(rootDir, 'libmvi/libmvi-api')
+//include ':libmvi-mobius'
+//project(':libmvi-mobius').projectDir = new File(rootDir, 'libmvi/libmvi-mobius')
