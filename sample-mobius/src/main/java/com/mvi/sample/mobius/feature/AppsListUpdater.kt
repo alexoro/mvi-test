@@ -12,12 +12,12 @@ class AppsListUpdater : Update<AppsListModel, AppsListEvent, AppsListEffect> {
         event: AppsListEvent
     ): Next<AppsListModel, AppsListEffect> {
         return when (event) {
-            is AppsListEvents.InitLoad.OnStart -> onEventInitLoad(model, event)
+            is AppsListEvents.InitLoad.Start -> onEventInitLoad(model, event)
             is AppsListEvents.InitLoad.OnSuccess -> onEventInitLoad(model, event)
             is AppsListEvents.InitLoad.OnError -> onEventInitLoad(model, event)
-            is AppsListEvents.SendLogs.OnStart -> onEventSendLogs(model, event)
-            is AppsListEvents.SendLogs.OnCancel -> onEventSendLogs(model, event)
-            is AppsListEvents.SendLogs.OnSuccess -> onEventSendLogs(model, event)
+            is AppsListEvents.SendLogs.Start -> onEventSendLogs(model, event)
+            is AppsListEvents.SendLogs.Cancel -> onEventSendLogs(model, event)
+            is AppsListEvents.SendLogs.OnComplete -> onEventSendLogs(model, event)
             is AppsListEvents.SendLogs.OnError -> onEventSendLogs(model, event)
             else -> throw UnsupportedOperationException("Unknown event: $event")
         }
@@ -27,7 +27,7 @@ class AppsListUpdater : Update<AppsListModel, AppsListEvent, AppsListEffect> {
 
     private fun onEventInitLoad(
         model: AppsListModel,
-        event: AppsListEvents.InitLoad.OnStart
+        event: AppsListEvents.InitLoad.Start
     ): Next<AppsListModel, AppsListEffect> {
         return next(
             model.copy(isLoading = true, list = listOf("Loading"), initLoadError = null),
@@ -54,7 +54,7 @@ class AppsListUpdater : Update<AppsListModel, AppsListEvent, AppsListEffect> {
 
     private fun onEventSendLogs(
         model: AppsListModel,
-        event: AppsListEvents.SendLogs.OnStart
+        event: AppsListEvents.SendLogs.Start
     ): Next<AppsListModel, AppsListEffect> {
         return next(
             model.copy(sendingLogs = true),
@@ -63,7 +63,7 @@ class AppsListUpdater : Update<AppsListModel, AppsListEvent, AppsListEffect> {
 
     private fun onEventSendLogs(
         model: AppsListModel,
-        event: AppsListEvents.SendLogs.OnCancel
+        event: AppsListEvents.SendLogs.Cancel
     ): Next<AppsListModel, AppsListEffect> {
         return next(
             model.copy(sendingLogs = false),
@@ -72,7 +72,7 @@ class AppsListUpdater : Update<AppsListModel, AppsListEvent, AppsListEffect> {
 
     private fun onEventSendLogs(
         model: AppsListModel,
-        event: AppsListEvents.SendLogs.OnSuccess
+        event: AppsListEvents.SendLogs.OnComplete
     ): Next<AppsListModel, AppsListEffect> {
         return next(
             model.copy(sendingLogs = false))

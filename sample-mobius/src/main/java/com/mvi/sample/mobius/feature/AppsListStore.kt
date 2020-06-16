@@ -10,16 +10,20 @@ data class AppsListModel(
     val sendingLogs: Boolean = false
 )
 
+/**
+ * Общий контракт - все, что начинается на On - внутренние Intent, результаты выполнения SideEffect.
+ * Все остальное - это публичные Intent, которые могут вызывать внешние товарищи (UI).
+ */
 interface AppsListEvents {
     interface InitLoad {
-        object OnStart : AppsListEvent
+        object Start : AppsListEvent
         data class OnSuccess(val apps: List<String>) : AppsListEvent
         data class OnError(val error: Throwable) : AppsListEvent
     }
     interface SendLogs {
-        data class OnStart(val logs: String) : AppsListEvent
-        object OnCancel : AppsListEvent
-        object OnSuccess : AppsListEvent
+        data class Start(val logs: String) : AppsListEvent
+        object Cancel : AppsListEvent
+        object OnComplete : AppsListEvent
         data class OnError(val error: Throwable) : AppsListEvent
     }
 }

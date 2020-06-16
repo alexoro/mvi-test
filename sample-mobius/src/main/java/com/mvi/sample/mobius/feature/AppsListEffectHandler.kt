@@ -57,7 +57,7 @@ class AppsListEffectHandler : Connectable<AppsListEffect, AppsListEvent> {
             .timer(3, TimeUnit.SECONDS)
             .subscribeBy(
                 onSuccess = { output.accept(
-                    AppsListEvents.SendLogs.OnSuccess
+                    AppsListEvents.SendLogs.OnComplete
                 )},
                 onError = { output.accept(
                     AppsListEvents.SendLogs.OnError(it)

@@ -29,10 +29,10 @@ class AppsListView(
 
     init {
         loadInitView.setOnClickListener {
-            feature.submit(AppsListEvents.InitLoad.OnStart)
+            feature.submit(AppsListEvents.InitLoad.Start)
         }
         sendLogsView.setOnClickListener {
-            feature.submit(AppsListEvents.SendLogs.OnStart("Hello world!"))
+            feature.submit(AppsListEvents.SendLogs.Start("Hello world!"))
         }
         observeDisposable = feature.observeModel().subscribe {
             resultView.text = "Loading = ${it.isLoading}, List = ${it.list}"
@@ -55,7 +55,7 @@ class AppsListView(
                 .setMessage("Still in progress!")
                 .setCancelable(false)
                 .setNeutralButton("Cancel") { _, _ ->
-                    feature.submit(AppsListEvents.SendLogs.OnCancel)
+                    feature.submit(AppsListEvents.SendLogs.Cancel)
                 }
                 .setOnDismissListener {
                     sendLogsDialog = null
