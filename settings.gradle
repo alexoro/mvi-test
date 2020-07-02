@@ -5,7 +5,9 @@ include ':app',
 //        ':sample-mvikotlin'
         ':sample-mvicore'
 
-//include ':libmvi-api'
-//project(':libmvi-api').projectDir = new File(rootDir, 'libmvi/libmvi-api')
-//include ':libmvi-mobius'
-//project(':libmvi-mobius').projectDir = new File(rootDir, 'libmvi/libmvi-mobius')
+include ':libmvi-api'
+project(':libmvi-api').projectDir = new File(rootDir, 'libmvi/libmvi-api')
+include ':libmvi-impl-mobius'
+project(':libmvi-impl-mobius').projectDir = new File(rootDir, 'libmvi/libmvi-impl-mobius')
+include ':libmvi-sample'
+project(':libmvi-sample').projectDir = new File(rootDir, 'libmvi/libmvi-sample')

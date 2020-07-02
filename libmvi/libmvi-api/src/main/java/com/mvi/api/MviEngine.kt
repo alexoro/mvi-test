@@ -1,12 +1,16 @@
 package com.mvi.api
 
+import androidx.annotation.AnyThread
 import io.reactivex.Observable
 
-interface MviEngine<State : MviState, Action : MviAction, Effect : MviEffect> {
+@AnyThread
+interface MviEngine<State, Action, Effect> {
 
-    fun submit(intent: Action)
+    fun submit(action: Action)
 
     fun getState(): State
+    fun addStateObserver(observer: MviStateObserver<State>)
+    fun removeStateObserver(observer: MviStateObserver<State>)
     fun observeState(): Observable<State>
 
     fun shutdown()

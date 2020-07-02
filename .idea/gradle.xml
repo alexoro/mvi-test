@@ -11,6 +11,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/libmvi/libmvi-api" />
+            <option value="$PROJECT_DIR$/libmvi/libmvi-impl-mobius" />
+            <option value="$PROJECT_DIR$/libmvi/libmvi-sample" />
             <option value="$PROJECT_DIR$/sample-mobius" />
             <option value="$PROJECT_DIR$/sample-mvicore" />
             <option value="$PROJECT_DIR$/sample-rxredux" />
